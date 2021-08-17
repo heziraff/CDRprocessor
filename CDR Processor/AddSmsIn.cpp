@@ -7,7 +7,7 @@ experis::AddSmsIn::AddSmsIn(DataBase& a_DB)
 :m_DB(a_DB){
 }
 
-void experis::AddSmsIn::Add(std::vector<std::string> a_cdr) {
+void experis::AddSmsIn::Add(std::vector<std::string> &a_cdr) {
 	std::stringstream sstream(a_cdr[1]);
 	long long id;
 	sstream >> id;

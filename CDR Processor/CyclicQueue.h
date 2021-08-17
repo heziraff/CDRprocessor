@@ -64,7 +64,8 @@ void CyclicQueue<ValueT>::Enqueue(const ValueT& a_value) {
 		}
 		assert(this->m_currentSize <= this->m_maxSize);
 		this->m_container[this->m_nextEmpty] = a_value;
-		m_logger->Info("Push " + a_value.Str() + " to the queue");
+		//std::string str = a_value.toString();
+		m_logger->Info("Push ... to the queue");
 		this->m_nextEmpty = (this->m_nextEmpty + 1) % this->m_maxSize;
 		++this->m_currentSize;
 	}

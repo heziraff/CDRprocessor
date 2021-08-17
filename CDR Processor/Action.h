@@ -8,7 +8,7 @@ class Action {
 public:
 	explicit Action() = default;
 	~Action() = default;
-	virtual void Add(std::vector<std::string> a_cdr) {};
+	virtual void Add(std::vector<std::string> &a_cdr) = 0;
 };
 
 }//experis

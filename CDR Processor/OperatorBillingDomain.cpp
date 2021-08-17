@@ -1,4 +1,5 @@
 #include "OperatorBillingDomain.h"
+#include <sstream>
 #include <cassert>
 namespace experis {
 
@@ -12,6 +13,12 @@ void OperatorBillingDomain::operator+=(const ClientBillingDomain& a_other) {
 	m_voiceOut += a_other.VoiceOut();
 	m_smsIn += a_other.SmsIn();
 	m_smsOut += a_other.SmsOut();
+}
+
+std::string OperatorBillingDomain::toString() const {
+	std::ostringstream strout;
+	strout << "Id: " << m_id << "\n VoiceIn: " << m_voiceIn << "\n VoiceOut: " << m_voiceOut << "\n SmsIn: " << m_smsIn << "\n SmsOut: " << m_smsOut << "\n";
+	return strout.str();
 }
 
 long long OperatorBillingDomain::Id() const {

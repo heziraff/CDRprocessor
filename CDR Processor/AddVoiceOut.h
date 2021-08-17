@@ -13,7 +13,7 @@ public:
 	AddVoiceOut(const AddVoiceOut& a_other) = delete;
 
 	/*Methods*/
-	virtual void Add(std::vector<std::string> a_cdr) override;
+	virtual void Add(std::vector<std::string>& a_cdr) override;
 
 private:
 	DataBase& m_DB;

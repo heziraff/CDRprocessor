@@ -7,7 +7,7 @@ experis::AddVoiceIn::AddVoiceIn(DataBase& a_DB)
 	:m_DB(a_DB) {
 }
 
-void experis::AddVoiceIn::Add(std::vector<std::string> a_cdr) {
+void experis::AddVoiceIn::Add(std::vector<std::string> &a_cdr) {
 	std::stringstream sstream(a_cdr[1]);
 	long long id;
 	sstream >> id;

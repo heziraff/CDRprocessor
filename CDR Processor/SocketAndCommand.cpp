@@ -1,4 +1,5 @@
 #include "SocketAndCommand.h"
+#include <sstream>
 
 using namespace experis;
 
@@ -14,6 +15,9 @@ SocketAndCommand::SocketType SocketAndCommand::Socket() {
 	return this->m_socketId;
 }
 
-std::string SocketAndCommand::Str() const {
-	return m_command + ", " + std::to_string(m_socketId);
+
+std::string SocketAndCommand::toString() const {
+	std::ostringstream strout;
+	strout << m_command + ", " << m_socketId << "\n";
+	return strout.str();
 }

@@ -39,28 +39,43 @@ struct ConnectionTerminate {
 	std::set<size_t>& m_activeSockets;
 };
 
-void GetInput1(TelnetInputer *a_telnetInputer) {
-	while(true) {
-		(*a_telnetInputer)();
-	}
+void ReadCdrFiles(ReadCDR *a_telnetInputer) {
+	(*a_telnetInputer)();
 }
 
+void LoadActions(std::map<std::string, std::shared_ptr<Action>>& a_actions, DataBase &dataBase) {
+	std::shared_ptr<Action> addVoiceOut = std::make_shared<AddVoiceOut>(dataBase);
+	a_actions["MOC"] = addVoiceOut;
 
+	std::shared_ptr<Action> addVoiceIn = std::make_shared<AddVoiceIn>(dataBase);
+	a_actions["MTC"] = addVoiceIn;
+
+	std::shared_ptr<Action> addSmsOut = std::make_shared<AddSmsOut>(dataBase);
+	a_actions["SMS-MO"] = addSmsOut;
+
+	std::shared_ptr<Action> addSmsIn = std::make_shared<AddSmsIn>(dataBase);
+	a_actions["SMS-MT"] = addSmsIn;
+
+	std::shared_ptr<Action> addData = std::make_shared<AddData>(dataBase);
+	a_actions["D"] = addData;
+
+	std::shared_ptr<Action> addNothing = std::make_shared<AddNothing>(dataBase);
+	a_actions["U"] = addNothing;
+	a_actions["B"] = addNothing;
+	a_actions["X"] = addNothing;
+}
+	
 
 int main() {
 	DataBase dataBase;
 	CyclicQueue<std::string> cdrPaths{100};
-	std::map<std::string, Action> actions;
-	actions["MOC"] = AddVoiceOut{ dataBase };
-	actions["MTC"] = AddVoiceIn{ dataBase };
-	actions["SMS-MO"] = AddSmsOut{ dataBase };
-	actions["SMS-MT"] = AddSmsIn{ dataBase };
-	actions["D"] = AddData{ dataBase };
-	actions["U"] = AddNothing{};
-	actions["B"] = AddNothing{};
-	actions["X"] = AddNothing{};
+	static std::map<std::string, std::shared_ptr<Action>> actions;
+	LoadActions(actions, dataBase);
+
+
 	ReadCDR readCDR{ dataBase , cdrPaths , actions };
-	
+	cdrPaths.Enqueue("InCDR/CDR2.txt");
+	cdrPaths.Enqueue("InCDR/CDR2.txt");
 	int t = 0;
 	std::set<size_t> activeSockets;
 	NetworkHandler net{ 5100, NewConnection{activeSockets} ,ConnectionTerminate{activeSockets} };
@@ -69,10 +84,10 @@ int main() {
 	TelnetInputer telnetInputer{ net, requestQueue };
 	OutputClient outputClient(net, requestQueue);
 
-	//std::thread inputer(readCDR, &telnetInputer);
+	std::thread readCdrFiles(ReadCdrFiles, &readCDR);
 	//std::thread outpuer(PutOutput1, outputClient);
 	
-	//inputer.join();
+	readCdrFiles.join();
 	//outpuer.join();
 	
 }
