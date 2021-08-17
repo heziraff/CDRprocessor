@@ -1,7 +1,7 @@
 #include "ReadCDR.h"
 #include "DataBase.h"
 #include "Reader.h"
-#include "DB/ClientBillingDomain.h"
+#include "ClientBillingDomain.h"
 #include <sstream>
 #include "Action.h"
 

@@ -88,7 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Administrator\source\repos\CDR Processor\CDR Processor;C:\Users\Administrator\source\repos\Loger\;C:\Users\Administrator\source\repos\CDR Processor\CDR Processor\DB;C:\Users\Administrator\source\repos\CDR Processor\BD\;C:\Users\Administrator\source\repos\CDR Processor\Actions\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../Loger/Loger/</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,10 +149,9 @@
     <ClCompile Include="AddSmsOut.cpp" />
     <ClCompile Include="AddVoiceIn.cpp" />
     <ClCompile Include="AddVoiceOut.cpp" />
+    <ClCompile Include="ClientBillingDomain.cpp" />
     <ClCompile Include="DataBase.cpp" />
-    <ClCompile Include="DB\ClientBillingDomain.cpp" />
-    <ClCompile Include="DB\DataBase.cpp" />
-    <ClCompile Include="DB\OperatorBillingDomain.cpp" />
+    <ClCompile Include="OperatorBillingDomain.cpp" />
     <ClCompile Include="Processor.cpp" />
     <ClCompile Include="ReadCDR.cpp" />
     <ClCompile Include="Reader.cpp" />
@@ -171,10 +170,10 @@
     <ClInclude Include="AddSmsOut.h" />
     <ClInclude Include="AddVoiceIn.h" />
     <ClInclude Include="AddVoiceOut.h" />
+    <ClInclude Include="ClientBillingDomain.h" />
     <ClInclude Include="CyclicQueue.h" />
-    <ClInclude Include="DataBase.h" />
-    <ClInclude Include="DB\ClientBillingDomain.h" />
     <ClInclude Include="AddNothing.h" />
+    <ClInclude Include="DataBase.h" />
     <ClInclude Include="OperatorBillingDomain.h" />
     <ClInclude Include="Processor.h" />
     <ClInclude Include="ReadCDR.h" />

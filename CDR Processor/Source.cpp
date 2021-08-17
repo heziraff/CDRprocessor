@@ -7,7 +7,18 @@
 #include <thread>
 #include "TelnetInputer.h"
 #include "OutputClient.h"
-#include "Loger/SingletonLogger.h"
+#include "SingletonLogger.h"
+
+#include "OperatorBillingDomain.h"
+#include "ClientBillingDomain.h"
+#include "DataBase.h"
+#include "ReadCDR.h"
+#include "AddData.h"
+#include "AddNothing.h"
+#include "AddSmsIn.h"
+#include "AddSmsOut.h"
+#include "AddVoiceIn.h"
+#include "AddVoiceOut.h"
 
 using namespace experis;
 struct NewConnection {
@@ -34,27 +45,34 @@ void GetInput1(TelnetInputer *a_telnetInputer) {
 	}
 }
 
-#include "OperatorBillingDomain.h"
-#include "ClientBillingDomain.h"
-#include "DataBase.h"
+
+
 int main() {
-	
+	DataBase dataBase;
+	CyclicQueue<std::string> cdrPaths{100};
+	std::map<std::string, Action> actions;
+	actions["MOC"] = AddVoiceOut{ dataBase };
+	actions["MTC"] = AddVoiceIn{ dataBase };
+	actions["SMS-MO"] = AddSmsOut{ dataBase };
+	actions["SMS-MT"] = AddSmsIn{ dataBase };
+	actions["D"] = AddData{ dataBase };
+	actions["U"] = AddNothing{};
+	actions["B"] = AddNothing{};
+	actions["X"] = AddNothing{};
+	ReadCDR readCDR{ dataBase , cdrPaths , actions };
 	
 	int t = 0;
-	/*
-	SingletonLogger loger();
 	std::set<size_t> activeSockets;
 	NetworkHandler net{ 5100, NewConnection{activeSockets} ,ConnectionTerminate{activeSockets} };
 	std::mutex mutex;
-	RequestQueue requestQueue(100, mutex);
-
+	CyclicQueue<SocketAndCommand> requestQueue{ 100 };
 	TelnetInputer telnetInputer{ net, requestQueue };
 	OutputClient outputClient(net, requestQueue);
 
-	std::thread inputer(GetInput1, &telnetInputer);
+	//std::thread inputer(readCDR, &telnetInputer);
 	//std::thread outpuer(PutOutput1, outputClient);
 	
-	inputer.join();
+	//inputer.join();
 	//outpuer.join();
-	*/
+	
 }

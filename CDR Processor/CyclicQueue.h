@@ -4,7 +4,7 @@
 #include <mutex>
 #include <semaphore>
 #include <exception>
-#include "Loger/SingletonLogger.h"
+#include "SingletonLogger.h"
 #include <iostream>
 
 namespace experis {

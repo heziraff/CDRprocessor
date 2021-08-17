@@ -1,5 +1,5 @@
 #pragma once
-#include "DB/ClientBillingDomain.h"
+#include "ClientBillingDomain.h"
 
 namespace experis {
 class OperatorBillingDomain {

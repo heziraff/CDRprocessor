@@ -1,6 +1,5 @@
 #include "OperatorBillingDomain.h"
 #include <cassert>
-#include "ClientBillingDomain.h"
 namespace experis {
 
 OperatorBillingDomain::OperatorBillingDomain(long long a_id, size_t a_voiceIn, size_t a_voiceOut, size_t a_smsIn, size_t a_smsOut)
