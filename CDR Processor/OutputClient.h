@@ -1,13 +1,13 @@
 #pragma once
 #include "NetworkHandler.h"
 #include "SocketAndCommand.h"
-#include "CircularQueue.h"
+#include "CyclicQueue.h"
 
 namespace experis {
 //class NetworkHandler;
 //class SocketAndCommand;
 //class CircularQueue;
-using RequestQueue = CircularQueue;
+using RequestQueue = CyclicQueue<SocketAndCommand>;
 class OutputClient {
 
 public:

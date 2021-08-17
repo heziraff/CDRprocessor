@@ -13,12 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\DB">
+      <UniqueIdentifier>{6fee0401-a6a6-42fc-a759-78c5d1e0fe5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DB">
+      <UniqueIdentifier>{f44eb30a-bef9-4803-900b-e78ba6a145cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AddBD">
+      <UniqueIdentifier>{7cc2cabf-9006-443f-a29a-213444ef8b72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Actions">
+      <UniqueIdentifier>{8c2a1dcc-4aa0-4d47-9fb6-b3a782a2b28a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Actions">
+      <UniqueIdentifier>{06e9811d-4460-4713-93aa-52c9f525dcb8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CircularQueue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SocketAndCommand.cpp">
@@ -39,21 +51,48 @@
     <ClCompile Include="Processor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ClientBillingDomain.cpp">
+    <ClCompile Include="Tokenizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OperatorBillingDomain.cpp">
+    <ClCompile Include="ReadCDR.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DataBase.cpp">
+      <Filter>Source Files\DB</Filter>
+    </ClCompile>
+    <ClCompile Include="Reader.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AddSmsIn.cpp">
+      <Filter>Source Files\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="AddSmsOut.cpp">
+      <Filter>Source Files\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="AddVoiceIn.cpp">
+      <Filter>Source Files\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="AddVoiceOut.cpp">
+      <Filter>Source Files\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="AddData.cpp">
+      <Filter>Source Files\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="DB\ClientBillingDomain.cpp">
+      <Filter>Source Files\DB</Filter>
+    </ClCompile>
+    <ClCompile Include="DB\DataBase.cpp">
+      <Filter>Source Files\DB</Filter>
+    </ClCompile>
+    <ClCompile Include="DB\OperatorBillingDomain.cpp">
+      <Filter>Source Files\DB</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NetworkHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CircularQueue.h">
+    <ClInclude Include="CyclicQueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SemaphoreException.h">
@@ -80,17 +119,44 @@
     <ClInclude Include="Processor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BillingDomain.h">
+    <ClInclude Include="Tokenizer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ClientBillingDomain.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="OperatorBillingDomain.h">
+    <ClInclude Include="ReadCDR.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DataBase.h">
+      <Filter>Header Files\DB</Filter>
+    </ClInclude>
+    <ClInclude Include="OperatorBillingDomain.h">
+      <Filter>Header Files\DB</Filter>
+    </ClInclude>
+    <ClInclude Include="Reader.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DB\ClientBillingDomain.h">
+      <Filter>Header Files\DB</Filter>
+    </ClInclude>
+    <ClInclude Include="AddSmsIn.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="Action.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="AddSmsOut.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="AddVoiceIn.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="AddVoiceOut.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="AddData.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="AddNothing.h">
+      <Filter>Header Files\Actions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -9,6 +9,6 @@ experis::OutputClient::OutputClient(NetworkHandler& a_network, RequestQueue& a_r
 
 void experis::OutputClient::Output() {
 	SocketAndCommand socketAndCommand;
-	m_requestQueue.Get(socketAndCommand);
+	m_requestQueue.Dequeue(socketAndCommand);
 	m_network.PutOutput(socketAndCommand.Socket(), socketAndCommand.Command());
 }

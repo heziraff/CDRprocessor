@@ -2,7 +2,7 @@
 
 #include "NetworkHandler.h"
 #include "SocketAndCommand.h"
-#include "CircularQueue.h"
+#include "CyclicQueue.h"
 #include "inputer.h"
 
 
@@ -10,7 +10,7 @@ namespace experis {
 //class NetworkHandler;
 //class SocketAndCommand;
 //class CircularQueue;
-using RequestQueue = CircularQueue;
+using RequestQueue = CyclicQueue<SocketAndCommand>;
 class TelnetInputer : public Inputer {
 	
 public:

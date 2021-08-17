@@ -11,5 +11,5 @@ void TelnetInputer::operator()() {
 	std::string request;
 	size_t socket;
 	m_network.GetInput(&socket, &request);
-	m_requestQueue.Push({ socket , request });
+	m_requestQueue.Enqueue({ socket , request });
 }

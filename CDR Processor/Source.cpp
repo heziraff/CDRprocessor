@@ -2,7 +2,7 @@
 #include <iostream>
 #include <set>
 #include <string>
-#include "CircularQueue.h"
+#include "CyclicQueue.h"
 #include "SocketAndCommand.h"
 #include <thread>
 #include "TelnetInputer.h"
@@ -39,14 +39,6 @@ void GetInput1(TelnetInputer *a_telnetInputer) {
 #include "DataBase.h"
 int main() {
 	
-	DataBase DB;
-	ClientBillingDomain b1(425020528409010, 9273, 8215, 54, 21, 61523, 1343);
-	ClientBillingDomain b2(425020528409010, 9273, 8215, 54, 21, 61523, 1343);
-	ClientBillingDomain b3(425020528409011, 9273, 8215, 54, 21, 61523, 1343);
-	DB.Add(b1);
-	DB.Add(b1);
-	BillingDomain& a = DB.Get("operator", 42502);
-	//BillingDomain& b = DB.Get("msisdn", 42502);
 	
 	int t = 0;
 	/*

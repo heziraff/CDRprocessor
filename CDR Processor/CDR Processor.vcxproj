@@ -88,7 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Administrator\source\repos\CDR Processor\CDR Processor;C:\Users\Administrator\source\repos\Loger\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Administrator\source\repos\CDR Processor\CDR Processor;C:\Users\Administrator\source\repos\Loger\;C:\Users\Administrator\source\repos\CDR Processor\CDR Processor\DB;C:\Users\Administrator\source\repos\CDR Processor\BD\;C:\Users\Administrator\source\repos\CDR Processor\Actions\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -144,31 +144,48 @@
   <ItemGroup>
     <ClCompile Include="..\..\Loger\Loger\Logger.cpp" />
     <ClCompile Include="..\..\Loger\Loger\SingletonLogger.cpp" />
-    <ClCompile Include="CircularQueue.cpp" />
-    <ClCompile Include="ClientBillingDomain.cpp" />
+    <ClCompile Include="AddData.cpp" />
+    <ClCompile Include="AddSmsIn.cpp" />
+    <ClCompile Include="AddSmsOut.cpp" />
+    <ClCompile Include="AddVoiceIn.cpp" />
+    <ClCompile Include="AddVoiceOut.cpp" />
     <ClCompile Include="DataBase.cpp" />
-    <ClCompile Include="OperatorBillingDomain.cpp" />
+    <ClCompile Include="DB\ClientBillingDomain.cpp" />
+    <ClCompile Include="DB\DataBase.cpp" />
+    <ClCompile Include="DB\OperatorBillingDomain.cpp" />
     <ClCompile Include="Processor.cpp" />
+    <ClCompile Include="ReadCDR.cpp" />
+    <ClCompile Include="Reader.cpp" />
     <ClCompile Include="TelnetInputer.cpp" />
     <ClCompile Include="OutputClient.cpp" />
     <ClCompile Include="SocketAndCommand.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Tokenizer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Loger\Loger\Logger.h" />
     <ClInclude Include="..\..\Loger\Loger\SingletonLogger.h" />
-    <ClInclude Include="BillingDomain.h" />
-    <ClInclude Include="CircularQueue.h" />
-    <ClInclude Include="ClientBillingDomain.h" />
+    <ClInclude Include="Action.h" />
+    <ClInclude Include="AddData.h" />
+    <ClInclude Include="AddSmsIn.h" />
+    <ClInclude Include="AddSmsOut.h" />
+    <ClInclude Include="AddVoiceIn.h" />
+    <ClInclude Include="AddVoiceOut.h" />
+    <ClInclude Include="CyclicQueue.h" />
     <ClInclude Include="DataBase.h" />
+    <ClInclude Include="DB\ClientBillingDomain.h" />
+    <ClInclude Include="AddNothing.h" />
     <ClInclude Include="OperatorBillingDomain.h" />
     <ClInclude Include="Processor.h" />
+    <ClInclude Include="ReadCDR.h" />
+    <ClInclude Include="Reader.h" />
     <ClInclude Include="TelnetInputer.h" />
     <ClInclude Include="inputer.h" />
     <ClInclude Include="NetworkHandler.h" />
     <ClInclude Include="OutputClient.h" />
     <ClInclude Include="SemaphoreException.h" />
     <ClInclude Include="SocketAndCommand.h" />
+    <ClInclude Include="Tokenizer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

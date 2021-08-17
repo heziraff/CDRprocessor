@@ -8,11 +8,11 @@ class ClientBillingDomain;
 class OperatorBillingDomain;
 
 class DataBase {
-	using operatorsBD = std::map< unsigned int, OperatorBillingDomain>;
+	using operatorsBD = std::map< long long, OperatorBillingDomain>;
 	using clientsBD = std::map< long long, ClientBillingDomain>;
 public:	
 	void Add(const ClientBillingDomain& a_cbd);
-	OperatorBillingDomain& OperatorBD(const unsigned int& a_key);
+	OperatorBillingDomain& OperatorBD(const long long& a_key);
 	ClientBillingDomain& ClientBD(const long long& a_key);
 
 private:
