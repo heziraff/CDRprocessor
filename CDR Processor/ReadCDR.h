@@ -10,6 +10,8 @@ class Action;
 class ReadCDR {
 public:
 	explicit ReadCDR(DataBase& a_dataBase, CyclicQueue< std::string>& a_cdrPaths, std::map<std::string, std::shared_ptr<Action>>&a_actions);
+	ReadCDR(const ReadCDR& a_other) = delete;
+	~ReadCDR() = default;
 	void operator()();
 	
 private:

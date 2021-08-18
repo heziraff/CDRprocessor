@@ -7,6 +7,9 @@ class OperatorBillingDomain {
 public:
 	explicit OperatorBillingDomain() = default;
 	explicit OperatorBillingDomain(long long a_id, size_t a_voiceIn, size_t a_voiceOut, size_t a_smsIn, size_t a_smsOut);
+	OperatorBillingDomain(const OperatorBillingDomain& a_other) = default;
+	~OperatorBillingDomain() = default;
+	OperatorBillingDomain& operator=(const OperatorBillingDomain& a_other) = default;
 	void operator+=(const ClientBillingDomain& a_other);
 	std::string toString() const;
 	long long Id() const;
